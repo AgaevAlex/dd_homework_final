@@ -18,7 +18,7 @@
 #define FLICKR_TAGS @"tags"
 
 typedef enum {
-    FlickrPhotoFormatSquare = 1,
+    FlickrPhotoFormatSquare = 1,    
     FlickrPhotoFormatLarge = 2,
     FlickrPhotoFormatOriginal = 64
 } FlickrPhotoFormat;

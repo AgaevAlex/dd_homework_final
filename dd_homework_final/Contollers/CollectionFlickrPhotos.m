@@ -1,5 +1,5 @@
 //
-//  PlaceFlickrPhotos.m
+//  CollectionFlickrPhotos.m
 //  dd_homework_final
 //
 //  Created by Admin on 03.12.17.
@@ -24,7 +24,7 @@
      [self.tableView setContentOffset:CGPointMake(0, -self.refreshControl.frame.size.height)
                              animated:YES];
     
-   NSURL *url = [FlickrFetcher URLforPhotos: _tag maxResults:MAX_RESULTS] ;
+   NSURL *url = [FlickrFetcher URLforPhotosInPlace: _tag maxResults:MAX_RESULTS] ;
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDownloadTask *task = [session downloadTaskWithURL:url
                                                 completionHandler:

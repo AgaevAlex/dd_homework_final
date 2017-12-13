@@ -1,5 +1,5 @@
 //
-//  PlaceFlickrPhotos.n
+//  CollectionFlickrPhotos.n
 //  dd_homework_final
 //
 //  Created by Admin on 03.12.17.

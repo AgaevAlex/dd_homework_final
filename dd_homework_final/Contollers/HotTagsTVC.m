@@ -14,6 +14,7 @@
 
 
 @property (nonatomic, strong) NSMutableArray *HotTags;
+@property (strong, nonatomic) UITextField *searchTextField;
 
 @end
 
@@ -25,14 +26,14 @@
 - (void)setTags:(NSArray *)tags
 {
     _tags = tags;
-    [self createPlacesByCountryForPlaces:_tags];
-    dispatch_async(dispatch_get_main_queue(), ^{
+    [self createHotTags:_tags];
+ 
     [self.tableView reloadData];
-         });
+    
 }
 
 
--(void)createPlacesByCountryForPlaces:(NSArray *)place
+-(void)createHotTags:(NSArray *)place
 {
     NSMutableArray *HotTags = [[NSMutableArray alloc] init];
     
@@ -49,7 +50,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
 }
+
+
+
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView
@@ -82,19 +88,19 @@
     if ([sender isKindOfClass:[UITableViewCell class]]) {
         NSIndexPath *indexPath =[self.tableView indexPathForCell:sender];
         if (indexPath) {
-            if ([segue.identifier isEqualToString:@"HotCollection"]) {
+            if ([segue.identifier isEqual:@"HotCollection"]) {
                 if ([segue.destinationViewController isKindOfClass:[CollectionFlickrPhotos class]]) {
-                    
-               
-                    NSDictionary *place = self.HotTags[indexPath.row];
-                    
-                    [segue.destinationViewController setTag:place ];
-                    [segue.destinationViewController setTitle:[[sender textLabel] text]];
+    
+                        NSDictionary *tag = self.HotTags[indexPath.row];
+                        [segue.destinationViewController setTag:tag ];
+                        [segue.destinationViewController setTitle:[[sender textLabel] text]];
+                    }
+                   
                 }
             }
         }
     }
-}
+
 
 
 

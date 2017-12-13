@@ -19,7 +19,9 @@
 -(void)setPhotos:(NSArray *)photos
 {
     _photos =photos;
-    [self.tableView reloadData];
+          [self.tableView reloadData];
+
+  
 }
 
 

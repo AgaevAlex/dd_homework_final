@@ -10,4 +10,5 @@
 @interface FlickrPhotos : UITableViewController
 
 @property (nonatomic, strong) NSArray *photos;
+
 @end
