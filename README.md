@@ -26,4 +26,18 @@ https://www.flickr.com/services/api/
 
 На главном экране добавить кнопку «Поиск», по нажатию на нее появляется строка поиска.
 Вбиваем текст, по кнопке «Найти» Ищем фотографии по введённому тексту(например, первые 10).
- 
+
+
+Screenshots:
+
+![](https://github.com/AgaevAlex/dd_homework_final/blob/master/Screenshots/1.jpg)
+![](https://github.com/AgaevAlex/dd_homework_final/blob/master/Screenshots/2.jpg)
+![](https://github.com/AgaevAlex/dd_homework_final/blob/master/Screenshots/3.jpg)
+![](https://github.com/AgaevAlex/dd_homework_final/blob/master/Screenshots/4.jpg)
+![](https://github.com/AgaevAlex/dd_homework_final/blob/master/Screenshots/5.jpg)
+![](https://github.com/AgaevAlex/dd_homework_final/blob/master/Screenshots/6.jpg)
+![](https://github.com/AgaevAlex/dd_homework_final/blob/master/Screenshots/7.jpg)
+![](https://github.com/AgaevAlex/dd_homework_final/blob/master/Screenshots/8.jpg)
+![](https://github.com/AgaevAlex/dd_homework_final/blob/master/Screenshots/9.jpg)
+
+
