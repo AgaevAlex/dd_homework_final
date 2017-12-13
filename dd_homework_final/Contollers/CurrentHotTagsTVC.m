@@ -33,7 +33,7 @@
                                               NSDictionary *results = [NSJSONSerialization JSONObjectWithData:jsonResults
                                                                                                       options:0
                                                                                                         error:NULL];
-                                              NSArray *tags = [results valueForKeyPath:@"hottags.tag"];
+                                              NSArray *tags = [results valueForKeyPath:FLICKR_RESULTS_TAGS];
                                               self.tags =tags;
                                           }
                                           dispatch_async(dispatch_get_main_queue(), ^{

@@ -7,10 +7,10 @@
 //
 #import "FlickrPhotos.h"
 #import "FlickrFetcher.h"
-
+#import "ImageViewController.h"
 @interface FlickrPhotos ()
 
-
+@property (nonatomic,strong) ImageViewController *imageViewController;
 
 @end
 
@@ -79,5 +79,45 @@
 }
 
 #pragma mark - Navigation
+-(void)prepareImageViewController:(ImageViewController *)ivc
+                   toDisplayPhoto:(NSDictionary *)photo
+                           forRow:(NSUInteger)row
+{
+    ivc.imageURL = [FlickrFetcher URLforPhoto:photo
+                                       format:FlickrPhotoFormatLarge];
+    ivc.title = [self titleForRow:row];
+    ivc.navigationItem.leftBarButtonItem.title = self.title;
+    ivc.navigationItem.leftBarButtonItem =
+    self.splitViewController.displayModeButtonItem;
+    ivc.navigationItem.leftItemsSupplementBackButton = YES;
+    
 
+    
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        
+        NSIndexPath *indexPath =[self.tableView indexPathForCell:sender];
+        if (indexPath) {
+            if ([segue.identifier isEqualToString:@"Display Photo"]) {
+                id vc = segue.destinationViewController;
+                id ivc =vc;
+                if ([vc isKindOfClass:[UINavigationController class]]) {
+                    ivc = [(UINavigationController  *)vc topViewController] ;
+                }
+                
+                if ([ivc isKindOfClass:[ImageViewController class]]) {
+                    self.imageViewController = ivc;
+                    [self prepareImageViewController:ivc
+                                      toDisplayPhoto:self.photos[indexPath.row]
+                                              forRow:indexPath.row];
+                    
+                    
+                }
+            }
+        }
+    }
+}
 @end

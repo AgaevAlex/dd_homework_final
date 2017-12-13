@@ -52,11 +52,6 @@
 }
 
 #pragma mark - Table view data source
-
-
-
-
-
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
@@ -91,9 +86,9 @@
                 if ([segue.destinationViewController isKindOfClass:[CollectionFlickrPhotos class]]) {
                     
                
-                    NSDictionary *tag = self.HotTags[indexPath.row];
+                    NSDictionary *place = self.HotTags[indexPath.row];
                     
-                    [segue.destinationViewController setTag:tag ];
+                    [segue.destinationViewController setTag:place ];
                     [segue.destinationViewController setTitle:[[sender textLabel] text]];
                 }
             }

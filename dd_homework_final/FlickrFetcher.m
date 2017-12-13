@@ -30,6 +30,29 @@
 {
     return [self URLForQuery:[NSString stringWithFormat:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&tags=%@&per_page=%d", tag, maxResults]];
 }
-
-
++ (NSURL *)URLforPhoto:(NSDictionary *)photo format:(FlickrPhotoFormat)format;
+{
+    return [NSURL URLWithString:[self urlStringForPhoto:photo format:format]];
+}
++ (NSString *)urlStringForPhoto:(NSDictionary *)photo format:(FlickrPhotoFormat)format
+{
+    id farm = [photo objectForKey:@"farm"];
+    id server = [photo objectForKey:@"server"];
+    id photo_id = [photo objectForKey:@"id"];
+    id secret = [photo objectForKey:@"secret"];
+    if (format == FlickrPhotoFormatOriginal) secret = [photo objectForKey:@"originalsecret"];
+    
+    NSString *fileType = @"jpg";
+    if (format == FlickrPhotoFormatOriginal) fileType = [photo objectForKey:@"originalformat"];
+    
+    if (!farm || !server || !photo_id || !secret) return nil;
+    
+    NSString *formatString = @"s";
+    switch (format) {
+        case FlickrPhotoFormatSquare:    formatString = @"s"; break;
+        case FlickrPhotoFormatLarge:     formatString = @"b"; break;
+        case FlickrPhotoFormatOriginal:  formatString = @"o"; break;
+    }
+    return [NSString stringWithFormat:@"https://farm%@.static.flickr.com/%@/%@_%@_%@.%@", farm, server, photo_id, secret, formatString, fileType];
+}
 @end
