@@ -18,16 +18,16 @@
 #define FLICKR_TAGS @"tags"
 
 typedef enum {
-    FlickrPhotoFormatSquare = 1,    
-    FlickrPhotoFormatLarge = 2,
-    FlickrPhotoFormatOriginal = 64
+    FlickrPhotoFormatSquare = 1,    // thumbnail
+    FlickrPhotoFormatLarge = 2,     // normal size
+    FlickrPhotoFormatOriginal = 64  // high resolution
 } FlickrPhotoFormat;
 
 
 @interface FlickrFetcher : NSObject
 
 + (NSURL *)URLforHotTags;
-+ (NSURL *)URLforPhotos:(id)tag maxResults:(int)maxResults;
++ (NSURL *)URLforPhotosInPlace:(id)tag maxResults:(int)maxResults;
 
 + (NSURL *)URLforPhoto:(NSDictionary *)photo format:(FlickrPhotoFormat)format;
 @end

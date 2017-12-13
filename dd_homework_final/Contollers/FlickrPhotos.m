@@ -19,7 +19,9 @@
 -(void)setPhotos:(NSArray *)photos
 {
     _photos =photos;
-          [self.tableView reloadData];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
 
   
 }
@@ -40,17 +42,6 @@
     
 }
 
--(NSString *)subTitleForRow:(NSUInteger)row
-{
-    NSString *subTitle = [self.photos[row] valueForKeyPath:FLICKR_PHOTO_DESCRIPTION];
-    
-    if ([[self titleForRow:row] isEqualToString:subTitle] ||
-        [[self titleForRow:row] isEqualToString:FLICKR_UNKNOWN_PHOTO]) {
-        subTitle = @"";
-    }
-    return subTitle;
-    
-}
 
 #pragma mark - UITableViewDaraSource
 
@@ -75,7 +66,7 @@
                                                             forIndexPath:indexPath];
     
     cell.textLabel.text = [self titleForRow:indexPath.row];
-    cell.detailTextLabel.text = [self subTitleForRow:indexPath.row];
+  
     
     return cell;
 }
