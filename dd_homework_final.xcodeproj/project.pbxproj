@@ -15,6 +15,8 @@
 		8416F9E21FD374D700AF53FB /* CurrentHotTagsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8416F9DF1FD374D600AF53FB /* CurrentHotTagsTVC.m */; };
 		8416F9E31FD374D700AF53FB /* HotTagsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8416F9E11FD374D700AF53FB /* HotTagsTVC.m */; };
 		8416F9E51FD375EB00AF53FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8416F9E41FD375EB00AF53FB /* Main.storyboard */; };
+		847B6A221FD808EE00A6F3AC /* CollectionFlickrPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 847B6A211FD808EE00A6F3AC /* CollectionFlickrPhotos.m */; };
+		847B6A251FD808F400A6F3AC /* FlickrPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 847B6A231FD808F400A6F3AC /* FlickrPhotos.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,10 @@
 		8416F9E01FD374D600AF53FB /* CurrentHotTagsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentHotTagsTVC.h; sourceTree = "<group>"; };
 		8416F9E11FD374D700AF53FB /* HotTagsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotTagsTVC.m; sourceTree = "<group>"; };
 		8416F9E41FD375EB00AF53FB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		847B6A201FD808EE00A6F3AC /* CollectionFlickrPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionFlickrPhotos.h; sourceTree = "<group>"; };
+		847B6A211FD808EE00A6F3AC /* CollectionFlickrPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionFlickrPhotos.m; sourceTree = "<group>"; };
+		847B6A231FD808F400A6F3AC /* FlickrPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrPhotos.m; sourceTree = "<group>"; };
+		847B6A241FD808F400A6F3AC /* FlickrPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrPhotos.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,17 +76,29 @@
 				8416F9D61FD373D000AF53FB /* FlickrFetcher.m */,
 				8416F9C01FD373B400AF53FB /* AppDelegate.h */,
 				8416F9C11FD373B400AF53FB /* AppDelegate.m */,
-				8416F9E01FD374D600AF53FB /* CurrentHotTagsTVC.h */,
-				8416F9DF1FD374D600AF53FB /* CurrentHotTagsTVC.m */,
-				8416F9E41FD375EB00AF53FB /* Main.storyboard */,
-				8416F9DE1FD374D600AF53FB /* HotTagsTVC.h */,
-				8416F9E11FD374D700AF53FB /* HotTagsTVC.m */,
+				84395BD21FD7E1C400598D42 /* Contollers */,
 				8416F9C91FD373B400AF53FB /* Assets.xcassets */,
 				8416F9CB1FD373B400AF53FB /* LaunchScreen.storyboard */,
+				8416F9E41FD375EB00AF53FB /* Main.storyboard */,
 				8416F9CE1FD373B400AF53FB /* Info.plist */,
 				8416F9CF1FD373B400AF53FB /* main.m */,
 			);
 			path = dd_homework_final;
+			sourceTree = "<group>";
+		};
+		84395BD21FD7E1C400598D42 /* Contollers */ = {
+			isa = PBXGroup;
+			children = (
+				8416F9DE1FD374D600AF53FB /* HotTagsTVC.h */,
+				8416F9E11FD374D700AF53FB /* HotTagsTVC.m */,
+				8416F9E01FD374D600AF53FB /* CurrentHotTagsTVC.h */,
+				8416F9DF1FD374D600AF53FB /* CurrentHotTagsTVC.m */,
+				847B6A201FD808EE00A6F3AC /* CollectionFlickrPhotos.h */,
+				847B6A211FD808EE00A6F3AC /* CollectionFlickrPhotos.m */,
+				847B6A241FD808F400A6F3AC /* FlickrPhotos.h */,
+				847B6A231FD808F400A6F3AC /* FlickrPhotos.m */,
+			);
+			path = Contollers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +173,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8416F9D01FD373B400AF53FB /* main.m in Sources */,
+				847B6A251FD808F400A6F3AC /* FlickrPhotos.m in Sources */,
+				847B6A221FD808EE00A6F3AC /* CollectionFlickrPhotos.m in Sources */,
 				8416F9E31FD374D700AF53FB /* HotTagsTVC.m in Sources */,
 				8416F9D91FD373D100AF53FB /* FlickrFetcher.m in Sources */,
 				8416F9C21FD373B400AF53FB /* AppDelegate.m in Sources */,
